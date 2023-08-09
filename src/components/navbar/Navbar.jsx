@@ -17,14 +17,15 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navContainer">
-      {!cookies.access_token ? (
-        <Link to="/user" style={{color:"inherit", textDecoration:"none"}}>
-        <span className="logo">BOOKING</span>
-        </Link>        ) : (
-        <>
-        {user ? user.username : (<div className="navItems">
-        </div>)}   </>
-      )}
+      {/* {!cookies.access_token ? ( */}
+        <Link to="/home" style={{color:"inherit", textDecoration:"none"}}>
+        <span className="logo">BOOKING</span></Link>   
+        {/*      ) : (
+        <> */}
+        {/* {user ? user.username : (<div className="navItems"> */}
+        {/* )}   </> */}
+      {/* )} */}
+      
         <button onClick={logout}>Logout</button>
        
       </div>

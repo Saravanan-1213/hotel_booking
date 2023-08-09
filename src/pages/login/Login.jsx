@@ -1,5 +1,3 @@
-
-
 import axios from "axios";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
@@ -8,11 +6,13 @@ import "./login.css";
 
 export const Auth = () => {
   return (
+    <div> 
     <div className="auth">
-      <div className="heading"><h1>Welcome to Booking App</h1>\
-       <img className="img" src="https://assets.materialup.com/uploads/132da5cf-4213-43fa-961a-b133e0b5f80d/preview.gif" /></div>
+          <h1 className="heading">Booking Application</h1>
+          <img className="img-logo" src="https://cdn.dribbble.com/users/6498639/screenshots/15138706/media/0262f2a4841a14755bd96261e11b6334.gif" alt="" />
       <Login />
       <Register />
+    </div>
     </div>
   );
 };
@@ -29,7 +29,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/login",
+        "https://booking-backend-hnux.onrender.com/auth/api/login",
         {
           username,
           password,
@@ -38,15 +38,13 @@ const Login = () => {
 
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
-      navigate("/user");
+      navigate("/home");
     } catch (err) {
       console.error(err);
-      navigate("/")
     }
   };
 
   return (
-    
     <Form
       username={username}
       setUsername={setUsername}
@@ -67,7 +65,7 @@ const Register = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:4000/api/register",
+        "https://booking-backend-hnux.onrender.com/auth/api/register",
         {
           username,
           password,
@@ -75,7 +73,7 @@ const Register = () => {
       );
       alert("Registration Completed! Now login.");
     } catch (error) {
-      console.error(error);
+     console.log(error)
     }
   };
 
@@ -100,9 +98,7 @@ const Form = ({
   onSubmit,
 }) => {
   return (
-  
     <div className="auth-container">
-      
       <form onSubmit={onSubmit}>
         <h2>{label}</h2>
         <div className="form-group">
@@ -128,4 +124,3 @@ const Form = ({
     </div>
   );
 };
-

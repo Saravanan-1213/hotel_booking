@@ -1,4 +1,3 @@
-import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
@@ -34,7 +33,7 @@ const FeaturedProperties = () => {
       </div>
       <div className="fpItem">
         <img
-          src="https://content.r9cdn.net/rimg/himg/16/bf/2a/hotelsdotcom-443332-c26cbe30_w-189329.jpg"
+          src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsfGVufDB8fDB8fHww&w=1000&q=80"
           alt=""
           className="fpImg"
         />
@@ -65,4 +64,3 @@ const FeaturedProperties = () => {
 };
 
 export default FeaturedProperties;
- 

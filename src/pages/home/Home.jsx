@@ -20,7 +20,7 @@ const Home = () => {
         <FeaturedProperties/>
         <MailList/>
         <Footer/>
-      </div>
+      </div>      
     </div>
   );
 };
